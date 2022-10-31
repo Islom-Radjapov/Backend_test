@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [
-    path('', views.wiki, name='wikipediya'),
 
+
+urlpatterns = [
+    path('', views.GenderPradict.as_view()  )
 ]
