@@ -7,7 +7,6 @@ import cvlib as cv
 from keras.utils import img_to_array
 import numpy as np
 
-
 class GenderPradict(APIView):
     def post(self, request):
         data = request.data
