@@ -4,5 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.GenderPradict.as_view()  )
+    path('', views.Home.as_view()),
+    # path('gender/', views.GenderPradict.as_view()),
+
 ]
