@@ -1,14 +1,25 @@
 # from .apps import ApiConfig
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.http import HttpResponse
 # import cv2
 # import cvlib as cv
 # import numpy as np
-
+from . import models
 
 class Home(APIView):
     def get(self, request):
         return Response('HOME PAGE')
+
+class Get_data(APIView):
+    def get(self, request):
+        queryset = models.Employees.objects.all()
+        print(queryset.query)
+        str_data = ""
+        for x in queryset:
+            str_data += f"<li>{x}</li>"
+        return HttpResponse(f"<ul>{str_data}</ul>")
+
 
 # class GenderPradict(APIView):
 #     def post(self, request):
