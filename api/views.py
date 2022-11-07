@@ -1,6 +1,7 @@
 # from .apps import ApiConfig
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.views.generic import TemplateView
 # import cv2
 # import cvlib as cv
 # import numpy as np
@@ -8,9 +9,31 @@ from . import models
 
 
 
-class Home(APIView):
-    def get(self, request):
-        return Response('HOME PAGE')
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+
+class AboutPageView(TemplateView):
+    template_name = 'about.html'
+
+
+    # def get(self, request):
+    #
+    #     serializer = SnippetSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     print(request.method)
+    #     print(request.data)
+    #     return Response('HOME PAGE')
+    #
+    # def post(self, request):
+    #     serializer = SnippetSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     else:
+    #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 # class GenderPradict(APIView):
 #     def post(self, request):
