@@ -15,6 +15,8 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
+class GamePageView(TemplateView):
+    template_name = 'game.html'
 
     # def get(self, request):
     #
